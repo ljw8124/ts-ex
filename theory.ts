@@ -68,7 +68,7 @@ const woo : Player = {
 //     return {
 //         name
 //     };
-}
+// }
 
 // 위 함수선언을 화살표함수로 바꿔보았을 때,
 const playerMaker = (name: string) : Player => ({name});
