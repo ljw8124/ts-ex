@@ -55,7 +55,7 @@ type Age = number;
 type Name = string;
 type Player = {
     name: Name,
-    age?: Age   // 선택적 타입
+    age?: Age   // 선택적 타입, JS 의 선택매개변수와 같다고 볼 수 있다.
 };
 
 //Alias 타입의 예
@@ -104,7 +104,9 @@ number.push(6); // numbers 는 readonly 이므로 당연히 push 도 되지 않�
 // -> JS 로 변환된 다음에는 배열을 수정할 수 있지만, 적어도 TS 에서는 readonly 속성을 줌으로써 보호될 수 있다.
 
 // Tuple 이란, 특정 위치에 특정 타입이 있어야하고 최소한의 길이를 가져야한다.
-const tupleEx: [string, number, boolean] = ['name', 123, true]; // tuple 은 타입을 정해주면 그 자리에 그 타입에 맞춰서 요소가 꼭 들어갸야 한다.
+// Tuple 은 타입을 정해주면 그 자리에 그 타입에 맞춰서 요소가 꼭 들어갸야 한다.
+// 즉 Tuple 타입의 변수는 정확히 명시된 개수 만큼의 원소만을 가질 수 있다.
+const tupleEx: [string, number, boolean] = ['name', 123, true];
 tupleEx[0] = 1; // 첫번째 요소가 string 이라는 것을 명시했기 때문에 해당 라인은 에러가 난다.
 
 // 4. unknown, TS 의 TypeChecker 와 소통하기
@@ -129,3 +131,4 @@ function bye(name: string|number) {
         name;   // 파라미터로 받기로한 두개의 타입이 아니므로 never 로 인식
     }
 }
+
