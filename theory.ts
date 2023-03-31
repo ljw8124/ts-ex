@@ -79,3 +79,53 @@ const joungwoo = playerMaker('joungwoo');
 // 만약 joungwoo 객체에 age 프로퍼티를 부여하고 싶을 때,
 // 리턴값을 지정하지 않았을떄, TS 에서는 이런 형식으로 프로퍼티 추가를 용인하지 않음
 joungwoo.age = 28   // joungwoo 변수가 Player 타입이라고 return 값을 지정해주었기 때문에 age 설정이 가능해졌다.
+
+// 또한 특별한 타입이 따로 존재한다.
+// 1. any -> JS 에서의 변수 선언처럼 변수에 어떠한 값을 넣어도 에러가 나오지 않는다
+// => 즉, any 는 TS 에서의 보호장치들을 무효화 시키는 역할을 한다.
+let multiVal: any = 'string';
+multiVal = 123;
+multiVal = true;
+multiVal = [1, 2, 3];
+
+// 2. void -> null 과 undefined 만을 값으로 가질 수 있는 타입이다. 아무런 값도 반환하지 않는 함수의 반환타입을 표시할 때 보통 사용한다.
+function nothing(): void {
+    console.log('return nothing...');
+}
+
+// 3. 요소들을 readonly 로 생성할 수도 있다.
+type Master = {
+    readonly name: Name,
+}
+const masterName: Master = 'anyone';   // readonly 로 생성했기 때문에 재할당할 수가 없다
+
+const numbers: readonly number[] = [1, 2, 3, 4, 5];
+number.push(6); // numbers 는 readonly 이므로 당연히 push 도 되지 않는다. 이 때 map 이나 filter 는 가능(요소를 변경시키지 않기 때문에)
+// -> JS 로 변환된 다음에는 배열을 수정할 수 있지만, 적어도 TS 에서는 readonly 속성을 줌으로써 보호될 수 있다.
+
+// Tuple 이란, 특정 위치에 특정 타입이 있어야하고 최소한의 길이를 가져야한다.
+const tupleEx: [string, number, boolean] = ['name', 123, true]; // tuple 은 타입을 정해주면 그 자리에 그 타입에 맞춰서 요소가 꼭 들어갸야 한다.
+tupleEx[0] = 1; // 첫번째 요소가 string 이라는 것을 명시했기 때문에 해당 라인은 에러가 난다.
+
+// 4. unknown, TS 의 TypeChecker 와 소통하기
+let unknown: unknown; // TS 로 부터 일종의 보호를 받게됨
+
+// type 을 먼저 확인하고 숫자로 사용 가능함
+if(typeof a === "number") {
+    let plus = a + 1;
+}
+// 위에 예와 같이 type 을 string 으로 확인하여서 string 으로 사용이 가능함
+if(typeof a === "string") {
+    let stringUpper = a.toUpperCase();
+}
+
+// 5. never 는 함수가 절대 return 하지 않을 떄 사용한다. 즉 exception 이 발생하거나 할 때 사용하는 타입이다.
+function bye(name: string|number) {
+    if(typeof name === "string") {
+        name;   // string 으로 인식
+    } else if(typeof name === "number") {
+        name;   // number 로 인식
+    } else {
+        name;   // 파라미터로 받기로한 두개의 타입이 아니므로 never 로 인식
+    }
+}
