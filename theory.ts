@@ -99,7 +99,7 @@ type Master = {
 }
 const masterName: Master = 'anyone';   // readonly 로 생성했기 때문에 재할당할 수가 없다
 
-const numbers: readonly number[] = [1, 2, 3, 4, 5];
+const numbers: readonly number[] = [1, 2, 3, 4, 5 ];
 number.push(6); // numbers 는 readonly 이므로 당연히 push 도 되지 않는다. 이 때 map 이나 filter 는 가능(요소를 변경시키지 않기 때문에)
 // -> JS 로 변환된 다음에는 배열을 수정할 수 있지만, 적어도 TS 에서는 readonly 속성을 줌으로써 보호될 수 있다.
 
