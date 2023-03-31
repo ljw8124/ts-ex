@@ -111,12 +111,12 @@ tupleEx[0] = 1; // 첫번째 요소가 string 이라는 것을 명시했기 때�
 let unknown: unknown; // TS 로 부터 일종의 보호를 받게됨
 
 // type 을 먼저 확인하고 숫자로 사용 가능함
-if(typeof a === "number") {
-    let plus = a + 1;
+if(typeof unknown === "number") {
+    let plus = unknown + 1;
 }
 // 위에 예와 같이 type 을 string 으로 확인하여서 string 으로 사용이 가능함
-if(typeof a === "string") {
-    let stringUpper = a.toUpperCase();
+if(typeof unknown === "string") {
+    let stringUpper = unknown.toUpperCase();
 }
 
 // 5. never 는 함수가 절대 return 하지 않을 떄 사용한다. 즉 exception 이 발생하거나 할 때 사용하는 타입이다.
