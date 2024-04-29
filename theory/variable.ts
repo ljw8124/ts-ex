@@ -19,10 +19,10 @@ const myName = {
 }
 
 // JS 였다면 run 한 후에야 에러를 확인할 수 있겠지만, TS 의 경우 IDE 코딩단계에서 에러를 뱉어준다.
-myName.hello();
+// myName.hello();
 
 // 아래 코드도 마찬가지로 JS 였다면 그냥 실행되어 1, 2, 3, 4true 로 실행되었겠지만, TS 의 경우 IDE 에서 에러라고 말해준다.
-[1, 2, 3, 4] + true
+// [1, 2, 3, 4] + true
 
 function divide(a, b) {
     return a / b;
@@ -30,18 +30,18 @@ function divide(a, b) {
 
 // JS 의 경우에는 그냥 실행되고 에러도 나오지 않게 된다.
 // 하지만 TS 의 경우 컴파일 이전에 숫자형 타입이 아니라는 것과 파라미터가 하나 더 필요하다는 에러가 나오게된다.
-divide("hello")
+// divide("hello")
 
 // TS 는 변수의 타입을 명시적으로 적어줄 수도 있고 JS 처럼 let 형식으로 쓴다면 타입을 추론하여준다.
 let a = "hello";
 a = "bye"    // string 으로 인식
-a = 1        // a 는 string 으로 인식하기 때문에 JS 라면 작동했겠지만, JS 는 에러가 나온다. -> 타입은 변경할 수가 없다.
+// a = 1        // a 는 string 으로 인식하기 때문에 JS 라면 작동했겠지만, JS 는 에러가 나온다. -> 타입은 변경할 수가 없다.
 
-let b : boolean = "x" // b 가 boolean 타입이라는 것을 명시했기 때문에 "x" 라는 string 을 대입할 수가 없다. : 형식으로 변수 타입 지정가능 -> 비추천하는 방식
+// let b : boolean = "x" // b 가 boolean 타입이라는 것을 명시했기 때문에 "x" 라는 string 을 대입할 수가 없다. : 형식으로 변수 타입 지정가능 -> 비추천하는 방식
 
 // let c : number[] = [];
 let c = [1, 2, 3];  // 또한 TS 는 array 의 타입도 지정해준다. number[]
-c.push("1");        // number array 이므로 string 을 넣을 수 없음
+// c.push("1");        // number array 이므로 string 을 넣을 수 없음
 
 // TS 의 타입
 // 1. optional type -> object 와는 조금 다름
@@ -106,17 +106,17 @@ function nothing(): void {
 type Master = {
     readonly name: Name,
 }
-const masterName: Master = 'anyone';   // readonly 로 생성했기 때문에 재할당할 수가 없다
+// const masterName: Master = 'anyone';   // readonly 로 생성했기 때문에 재할당할 수가 없다
 
 const numbers: readonly number[] = [1, 2, 3, 4, 5 ];
-number.push(6); // numbers 는 readonly 이므로 당연히 push 도 되지 않는다. 이 때 map 이나 filter 는 가능(요소를 변경시키지 않기 때문에)
+// number.push(6); // numbers 는 readonly 이므로 당연히 push 도 되지 않는다. 이 때 map 이나 filter 는 가능(요소를 변경시키지 않기 때문에)
 // -> JS 로 변환된 다음에는 배열을 수정할 수 있지만, 적어도 TS 에서는 readonly 속성을 줌으로써 보호될 수 있다.
 
 // Tuple 이란, 특정 위치에 특정 타입이 있어야하고 최소한의 길이를 가져야한다.
 // Tuple 은 타입을 정해주면 그 자리에 그 타입에 맞춰서 요소가 꼭 들어갸야 한다.
 // 즉 Tuple 타입의 변수는 정확히 명시된 개수 만큼의 원소만을 가질 수 있다.
 const tupleEx: [string, number, boolean] = ['name', 123, true];
-tupleEx[0] = 1; // 첫번째 요소가 string 이라는 것을 명시했기 때문에 해당 라인은 에러가 난다.
+// tupleEx[0] = 1; // 첫번째 요소가 string 이라는 것을 명시했기 때문에 해당 라인은 에러가 난다.
 
 // 4. unknown, TS 의 TypeChecker 와 소통하기
 let unknown: unknown; // TS 로 부터 일종의 보호를 받게됨
