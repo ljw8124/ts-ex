@@ -36,5 +36,5 @@ $ tsc --init
 
 이 때, noImplicitAny 와 strictNullChecks 를 사용하는 것이 좋음</br>
 - noImplicitAny: 변수들이 미리 정의된 타입을 가져야 하는지 여부 제어
-- strictNullChecks: null 과 undefined 가 모든 타입에서 허용되는지 확인 -> 이 옵션은 코드 작성을 어렵게 하는 경향이 있으므로,
-- 새 프로젝트를 시작하거나 하는 등의 경우가 아니라면, 설정하지 않아도 괜찮음
+- strictNullChecks: null 과 undefined 가 모든 타입에서 허용되는지 확인 -> 이 옵션은 코드 작성을 어렵게 하는 경향이 있으므로, </br>
+새 프로젝트를 시작하거나 하는 등의 경우가 아니라면, 설정하지 않아도 괜찮음. 하지만 개인적 경험으로는 꼭 필요하다고 봄... JS 에서 최악의 에러이므로..
