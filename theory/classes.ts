@@ -1,4 +1,5 @@
 // TS 로 물론 객체지향으로 코드를 구현할 수 있다
+// @ts-ignore
 class Player {
     constructor(
         private firstName: string,
@@ -7,7 +8,7 @@ class Player {
     ) {}
 }
 
-const joungwoo = new Player("lee", 'joung', '정우');
+const leePlayer = new Player("lee", 'joung', '정우');
 
 // C# 이나 java 처럼 private 으로 생성하면 접근이 되지 않는다.
 // javaScript 라면 생성이 가능하겠지만, TypeScript 는 컴파일 단계에서 실패하게 된다.

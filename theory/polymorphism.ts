@@ -10,16 +10,17 @@ type SuperPrint = {
     <T, M>(arr: T[], b?: M) :T
 }
 
+// @ts-ignore
 const superPrint: SuperPrint = (arr) => {
     arr.forEach(i => console.log(i));
 
     return arr[0];
 }
 
-const a = superPrint([1, 2, 3, 4], "X");
-const b = superPrint([true, false, true, true], 1);
-const c = superPrint(['a', 'b', 'c'], false);
-const d = superPrint([1, 2, true, false], []);
+// const testPrint01 = superPrint([1, 2, 3, 4], "X");
+// const testPrint02 = superPrint([true, false, true, true], 1);
+// const testPrint03 = superPrint(['a', 'b', 'c'], false);
+// const testPrint04 = superPrint([1, 2, true, false], []);
 
 // 실제로는 위에 방식으로 작성하지 않음
 // 직접 제네릭을 사용하여 선언하는 경우는 없고, 다른 패키지에서 가져다 쓰거나 리이브러리를 이용할 때 사용한다.

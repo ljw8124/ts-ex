@@ -1,11 +1,12 @@
+// @ts-ignore
 function superPrint<V>(a: V[]) {
     return a[0];
 }
 
-const a = superPrint([1, 2, 3, 4]);
-const b = superPrint([true, false, false,]);
-const c = superPrint(['a', 'b', 'c']);
-const d = superPrint([1, 2, true, false, "dummy"]);
+const test01 = superPrint([1, 2, 3, 4]);
+const test02 = superPrint([true, false, false,]);
+const test03 = superPrint(['a', 'b', 'c']);
+const test04 = superPrint([1, 2, true, false, "dummy"]);
 
 // 이렇게 오버라이딩할 수도 있음
 // 하지만 타입스크립트가 스스로 타입을 찾도록 하는것이 좋음
@@ -13,6 +14,7 @@ const d = superPrint([1, 2, true, false, "dummy"]);
 const e = <string>superPrint(["hi", "name", "place"]);
 
 // 저장하여 사용
+// @ts-ignore
 type Player<E> = {
     name: string
     extraInfo: E
@@ -24,15 +26,17 @@ type joungProfile = {
 }
 
 // 오버라이딩과 같은 느낌
+// @ts-ignore
 type joungPlayer = Player<joungProfile>
 
-const joungwoo: joungPlayer = {
+const jwPlayer: joungPlayer = {
     name: "joungwoo",
     extraInfo: {
         food: "taco"
     }
 }
 
+// @ts-ignore
 const extraPlayer: Player<null>  = {
     name: "extra",
     extraInfo: null

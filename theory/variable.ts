@@ -24,7 +24,7 @@ const myName = {
 // 아래 코드도 마찬가지로 JS 였다면 그냥 실행되어 1, 2, 3, 4true 로 실행되었겠지만, TS 의 경우 IDE 에서 에러라고 말해준다.
 // [1, 2, 3, 4] + true
 
-function divide(a, b) {
+function divide(a: number, b: number) : number {
     return a / b;
 }
 
@@ -62,15 +62,16 @@ const player : {
 // ex
 type Age = number;
 type Name = string;
+// @ts-ignore
 type Player = {
     name: Name,
     age?: Age   // 선택적 타입, JS 의 선택매개변수와 같다고 볼 수 있다.
 };
 
 //Alias 타입의 예
-const woo : Player = {
-    name: "joungwoo"
-};
+// const woo : Player = {
+//     name: "joungwoo"
+// };
 
 // 함수에서 인수의 타입을 지정하기
 // function playerMaker(name: string) : Player {   // 함수에서 콜론 뒤에 적는 값은 return 값을 지정하는 것이다.
@@ -80,14 +81,13 @@ const woo : Player = {
 // }
 
 // 위 함수선언을 화살표함수로 바꿔보았을 때,
-const playerMaker = (name: string) : Player => ({name});
+// const playerMaker = (name: string) : Player => ({name});
 
-
-const joungwoo = playerMaker('joungwoo');
+// const joungwoo = playerMaker('joungwoo');
 
 // 만약 joungwoo 객체에 age 프로퍼티를 부여하고 싶을 때,
 // 리턴값을 지정하지 않았을떄, TS 에서는 이런 형식으로 프로퍼티 추가를 용인하지 않음
-joungwoo.age = 28   // joungwoo 변수가 Player 타입이라고 return 값을 지정해주었기 때문에 age 설정이 가능해졌다.
+// joungwoo.age = 28   // joungwoo 변수가 Player 타입이라고 return 값을 지정해주었기 때문에 age 설정이 가능해졌다.
 
 // 또한 특별한 타입이 따로 존재한다.
 // 1. any -> JS 에서의 변수 선언처럼 변수에 어떠한 값을 넣어도 에러가 나오지 않는다
