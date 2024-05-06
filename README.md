@@ -29,3 +29,11 @@ console.log(city.touppercase());
 // toUpperCase 를 사용하시겠습니까?
 ```
 
+### tsconfig.json 파일 자동생성 커멘드
+```
+$ tsc --init
+```
+
+이 때, noImplicitAny 와 strictNullChecks 를 사용하는 것이 좋음</br>
+- noImplicitAny: 변수들이 미리 정의된 타입을 가져야 하는지 여부 제어
+- strictNullChecks: null 과 undefined 가 모든 타입에서 허용되는지 확인
