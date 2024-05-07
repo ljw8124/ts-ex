@@ -32,8 +32,9 @@ class Dict {
 
 class Word {
     constructor(
-        public term: string,
-        public def: string
+        // readonly 로 한 번 할당 받으면 변경을 불가능하도록 설정
+        public readonly term: string,
+        public readonly def: string
     ) {
     }
 }
