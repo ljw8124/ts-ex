@@ -67,3 +67,33 @@ any 타입은 진짜 문제점을 감추고 개발 경험을 나쁘게 하며, �
 또한 확장이 용이하다고 할 수 있는데, 여러개의 인터페이스를 상속받아 사용할 수 있기 때문이다.
 - type: interface 와 유사하게 청사진 역할을 한다. 하지만 property 를 추가해야하는 경우 임의로 추가하지 못하고, type 원형에서 추가해야 한다.</br>
 interface 와 다른점은, interface 는 다중 상속으로 property 를 추가한 것 처럼 보이게 할 수 있다.
+
+
+## 타입스크립트 프로젝트 설정 방법(수동방식, 많이 사용하지 않음)
+웹팩 쓰는 것과 같이 많이 사용하지만 직접 수동으로 설정하는 것은 흔치 않음</br>
+```
+$ mkdir _prjName
+$ npm init -y
+$ npm install -D typescript
+```
+
+위 명령어 사용 실행 후, src 디렉토리를 만들고 그 아래 .ts 소스를 만들어준다</br>
+그 후, 컴파일을 위한 tsconfig.json(파일이름 고정) 생성
+
+```
+$ touch tsconfig.json
+```
+
+option 설정
+```json
+{
+    "infclue": ["src"],  ->  ts 파일 경로 설정
+    "compileOptions": {"outDir":  "build"},  -> 컴파일 후 js 파일 생성될 디렉토리 지정
+    "target": "ES6",   -> 컴파일 될 js 버전 지정, ES6 가 가장 보편적임
+}
+```
+
+컴파일 명령어
+```
+$ tsc [ts 파일] <- 생략시 모든 ts 파일
+```
