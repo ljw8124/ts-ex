@@ -62,3 +62,6 @@ typings/
 
 # jetbrain config file
 .idea
+
+# js files
+.build
