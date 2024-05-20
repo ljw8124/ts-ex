@@ -66,3 +66,4 @@ typings/
 # js files
 build/
 */build
+build/*
