@@ -97,3 +97,7 @@ option 설정
 ```
 $ tsc [ts 파일] <- 생략시 모든 ts 파일
 ```
+
+
+참고사이트</br>
+https://bk0625.tistory.com/m/19
