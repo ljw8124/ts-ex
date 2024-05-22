@@ -21,14 +21,14 @@ const minus: Minus = (a, b) => {
     return a + b;
 }
 
-type Config = {
+type FConfig = {
     path: string,
     state: object
 }
 
 type Push = {
     (path: string) : void
-    (config: Config): void
+    (config: FConfig): void
 }
 
 const push:Push = (config) => {
