@@ -30,7 +30,7 @@ console.log(city.touppercase());
 ```
 
 ### tsconfig.json 파일 자동생성 커멘드
-```
+```shell
 $ tsc --init
 ```
 
@@ -71,7 +71,7 @@ interface 와 다른점은, interface 는 다중 상속으로 property 를 추�
 
 ## 타입스크립트 프로젝트 설정 방법(수동방식, 많이 사용하지 않음)
 웹팩 쓰는 것과 같이 많이 사용하지만 직접 수동으로 설정하는 것은 흔치 않음</br>
-```
+```shell
 $ mkdir _prjName
 $ npm init -y
 $ npm install -D typescript
@@ -80,7 +80,7 @@ $ npm install -D typescript
 위 명령어 사용 실행 후, src 디렉토리를 만들고 그 아래 .ts 소스를 만들어준다</br>
 그 후, 컴파일을 위한 tsconfig.json(파일이름 고정) 생성
 
-```
+```shell
 $ touch tsconfig.json
 ```
 
@@ -94,10 +94,14 @@ option 설정
 ```
 
 컴파일 명령어
-```
+```shell
 $ tsc [ts 파일] <- 생략시 모든 ts 파일
 ```
 
+빌드없이 타입스크립트 실행하는 방법
+```shell
+$ npm i -D ts-node
+```
 
 참고사이트</br>
 https://bk0625.tistory.com/m/19
