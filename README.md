@@ -24,7 +24,7 @@ console.log(city.toUppercase());  // TypeError: city.toUppercase is not a functi
 ```ts
 // TypeSrcipt 의 경우
 let city = 'new york city';
-console.log(city.touppercase());
+console.log(city.toUppercase());
 // ~~~ 'toUppercase' 속성이 'string' 형식에 없습니다.
 // toUpperCase 를 사용하시겠습니까?
 ```
@@ -95,12 +95,12 @@ option 설정
 
 컴파일 명령어
 ```shell
-$ tsc [ts 파일] <- 생략시 모든 ts 파일
+$ tsc [ts 파일] # 생략시 모든 ts 파일
 ```
 
 빌드없이 타입스크립트 실행하는 방법
 ```shell
-$ npm i -D ts-node
+$ npm i -D ts-node # 빌드없이 개발에서만 빠르게 새로고침
 ```
 
 참고사이트</br>
