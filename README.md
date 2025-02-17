@@ -103,6 +103,18 @@ $ tsc [ts 파일] # 생략시 모든 ts 파일
 $ npm i -D ts-node # 빌드없이 개발에서만 빠르게 새로고침
 ```
 
+### d.ts 파일
+type 을 declare(정의) 하기 위한 파일이다.</br>
+기조 javaScript 로 만들어진 서드파티 모듈들을 typeScript 환경에서도 사용할 수 있도록
+따로 타입만 정리해서 넣어둔 파일이라고 볼 수 있다.</br>
+
+```ts
+export type Age = number;
+export interface Person {
+    name: string;
+}
+```
+
 참고사이트</br>
 https://bk0625.tistory.com/m/19
 
