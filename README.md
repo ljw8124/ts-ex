@@ -107,13 +107,18 @@ $ npm i -D ts-node # 빌드없이 개발에서만 빠르게 새로고침
 type 을 declare(정의) 하기 위한 파일이다.</br>
 기조 javaScript 로 만들어진 서드파티 모듈들을 typeScript 환경에서도 사용할 수 있도록
 따로 타입만 정리해서 넣어둔 파일이라고 볼 수 있다.</br>
-
 ```ts
 export type Age = number;
 export interface Person {
     name: string;
 }
 ```
+
+### JavaScript node module 으로만 선언된 경우
+이 경우에는 TypeScript 에서는 타입 인식을 못하기 때문에 d.ts 파일로 일일이 설정해주어야한다.</br>
+하지만 아래 url 에서 npm에 있는 거의 모든 module 을 정의해놓은 파일이 있음</br>
+DefinitelyTyped: https://github.com/DefinitelyTyped/DefinitelyTyped
+
 
 참고사이트</br>
 https://bk0625.tistory.com/m/19
