@@ -119,6 +119,11 @@ export interface Person {
 하지만 아래 url 에서 npm에 있는 거의 모든 module 을 정의해놓은 파일이 있음</br>
 DefinitelyTyped: https://github.com/DefinitelyTyped/DefinitelyTyped
 
+그 후 사용할 수 있도록 아래 cmd 명령어를 실행한다
+```shell
+$ npm i -D @types/node
+```
+
 
 참고사이트</br>
 https://bk0625.tistory.com/m/19
