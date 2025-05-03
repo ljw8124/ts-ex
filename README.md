@@ -126,7 +126,8 @@ $ npm i -D @types/node
 
 
 참고사이트</br>
-https://bk0625.tistory.com/m/19
+https://bk0625.tistory.com/m/19 </br>
+https://www.typescriptlang.org/docs/handbook/intro.html
 
 
 ts 플레이그라운드(다운없이 이용가능)</br>
